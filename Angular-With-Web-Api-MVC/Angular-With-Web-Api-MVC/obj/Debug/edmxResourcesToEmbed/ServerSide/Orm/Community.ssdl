@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CommunityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="PageId" Type="bigint" />
+    <Property Name="Comment" Type="varchar" MaxLength="5000" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Likes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="PageId" Type="bigint" />
+    <Property Name="LikeStatus" Type="bit" />
+    <Property Name="Comment" Type="varchar" MaxLength="1000" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="LoginDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="LoginAt" Type="datetime" />
+    <Property Name="LogoutAt" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="PageView">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="PageId" Type="bigint" />
+    <Property Name="ViewStatus" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="PaperCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="PostCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="PostDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="PageDetail" Type="varchar" MaxLength="500" />
+    <Property Name="Title" Type="varchar" MaxLength="500" />
+    <Property Name="Desciption" Type="varchar" MaxLength="5000" />
+    <Property Name="Url" Type="varchar" MaxLength="500" />
+    <Property Name="PageName" Type="varchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="Address" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="100" />
+    <Property Name="State" Type="varchar" MaxLength="100" />
+    <Property Name="Country" Type="varchar" MaxLength="100" />
+    <Property Name="Zip" Type="int" />
+    <Property Name="PicturePath" Type="varchar" MaxLength="500" />
+    <Property Name="About" Type="varchar" MaxLength="5000" />
+    <Property Name="Description" Type="varchar" MaxLength="5000" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Questions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuestionTypeId" Type="bigint" />
+    <Property Name="QuestionSetId" Type="bigint" />
+    <Property Name="QuestionsLevelId" Type="bigint" />
+    <Property Name="PaperCategoryId" Type="bigint" />
+    <Property Name="Question" Type="varchar" MaxLength="1000" />
+    <Property Name="Answer1" Type="varchar" MaxLength="500" />
+    <Property Name="Answer2" Type="varchar" MaxLength="500" />
+    <Property Name="Answer3" Type="varchar" MaxLength="500" />
+    <Property Name="Answer4" Type="varchar" MaxLength="500" />
+    <Property Name="Answer" Type="varchar" MaxLength="5000" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="QuestionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaperCategoryId" Type="bigint" />
+    <Property Name="SetName" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="QuestionsLevel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuestionLevel" Type="varchar" MaxLength="200" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="QuestionsType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuesType" Type="varchar" MaxLength="200" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="PageId" Type="bigint" />
+    <Property Name="Value" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Results">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="QuestionSetId" Type="bigint" />
+    <Property Name="QuestionId" Type="bigint" />
+    <Property Name="UserAnswer" Type="varchar" MaxLength="5000" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="RoleUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="bigint" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="EmailId" Type="varchar" MaxLength="100" />
+    <Property Name="Salt" Type="varchar" MaxLength="100" />
+    <Property Name="Password" Type="varchar" MaxLength="100" />
+    <Property Name="Phone" Type="varchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+  </EntityType>
+  <Association Name="FK__Comments__PageId__5812160E">
+    <End Role="PostDetails" Type="Self.PostDetails" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comments__UserId__5629CD9C">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Likes__PageId__4D94879B">
+    <End Role="PostDetails" Type="Self.PostDetails" Multiplicity="0..1" />
+    <End Role="Likes" Type="Self.Likes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Likes">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Likes__UserId__4BAC3F29">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="Likes" Type="Self.Likes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Likes">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoginDeta__UserI__30F848ED">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="LoginDetails" Type="Self.LoginDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LoginDetails">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PageView__PageId__693CA210">
+    <End Role="PostDetails" Type="Self.PostDetails" Multiplicity="0..1" />
+    <End Role="PageView" Type="Self.PageView" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageView">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PageView__UserId__6754599E">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="PageView" Type="Self.PageView" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageView">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PostDetai__Categ__3D5E1FD2">
+    <End Role="PostCategory" Type="Self.PostCategory" Multiplicity="0..1" />
+    <End Role="PostDetails" Type="Self.PostDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PostDetails">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PostDetai__UserI__3F466844">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="PostDetails" Type="Self.PostDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PostDetails">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profile__UserId__21B6055D">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__QuestionS__Paper__75A278F5">
+    <End Role="PaperCategory" Type="Self.PaperCategory" Multiplicity="0..1" />
+    <End Role="QuestionSet" Type="Self.QuestionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaperCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestionSet">
+        <PropertyRef Name="PaperCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Questions__Paper__7F2BE32F">
+    <End Role="PaperCategory" Type="Self.PaperCategory" Multiplicity="0..1" />
+    <End Role="Questions" Type="Self.Questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaperCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Questions">
+        <PropertyRef Name="PaperCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Questions__Quest__797309D9">
+    <End Role="QuestionsType" Type="Self.QuestionsType" Multiplicity="0..1" />
+    <End Role="Questions" Type="Self.Questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionsType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Questions">
+        <PropertyRef Name="QuestionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Questions__Quest__7B5B524B">
+    <End Role="QuestionSet" Type="Self.QuestionSet" Multiplicity="0..1" />
+    <End Role="Questions" Type="Self.Questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Questions">
+        <PropertyRef Name="QuestionSetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Questions__Quest__7D439ABD">
+    <End Role="QuestionsLevel" Type="Self.QuestionsLevel" Multiplicity="0..1" />
+    <End Role="Questions" Type="Self.Questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionsLevel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Questions">
+        <PropertyRef Name="QuestionsLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Rating__PageId__60A75C0F">
+    <End Role="PostDetails" Type="Self.PostDetails" Multiplicity="0..1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Rating__UserId__5EBF139D">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Results__Questio__0E6E26BF">
+    <End Role="QuestionSet" Type="Self.QuestionSet" Multiplicity="0..1" />
+    <End Role="Results" Type="Self.Results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="QuestionSetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Results__Questio__10566F31">
+    <End Role="Questions" Type="Self.Questions" Multiplicity="0..1" />
+    <End Role="Results" Type="Self.Results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Results__UserId__0C85DE4D">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="Results" Type="Self.Results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserDetai__RoleI__1367E606">
+    <End Role="RoleUser" Type="Self.RoleUser" Multiplicity="0..1" />
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetails">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CommunityModelStoreContainer">
+    <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Likes" EntityType="Self.Likes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginDetails" EntityType="Self.LoginDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageView" EntityType="Self.PageView" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaperCategory" EntityType="Self.PaperCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PostCategory" EntityType="Self.PostCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PostDetails" EntityType="Self.PostDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuestionSet" EntityType="Self.QuestionSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuestionsLevel" EntityType="Self.QuestionsLevel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuestionsType" EntityType="Self.QuestionsType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rating" EntityType="Self.Rating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Results" EntityType="Self.Results" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleUser" EntityType="Self.RoleUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Comments__PageId__5812160E" Association="Self.FK__Comments__PageId__5812160E">
+      <End Role="PostDetails" EntitySet="PostDetails" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comments__UserId__5629CD9C" Association="Self.FK__Comments__UserId__5629CD9C">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Likes__PageId__4D94879B" Association="Self.FK__Likes__PageId__4D94879B">
+      <End Role="PostDetails" EntitySet="PostDetails" />
+      <End Role="Likes" EntitySet="Likes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Likes__UserId__4BAC3F29" Association="Self.FK__Likes__UserId__4BAC3F29">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Likes" EntitySet="Likes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoginDeta__UserI__30F848ED" Association="Self.FK__LoginDeta__UserI__30F848ED">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="LoginDetails" EntitySet="LoginDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PageView__PageId__693CA210" Association="Self.FK__PageView__PageId__693CA210">
+      <End Role="PostDetails" EntitySet="PostDetails" />
+      <End Role="PageView" EntitySet="PageView" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PageView__UserId__6754599E" Association="Self.FK__PageView__UserId__6754599E">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="PageView" EntitySet="PageView" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PostDetai__Categ__3D5E1FD2" Association="Self.FK__PostDetai__Categ__3D5E1FD2">
+      <End Role="PostCategory" EntitySet="PostCategory" />
+      <End Role="PostDetails" EntitySet="PostDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PostDetai__UserI__3F466844" Association="Self.FK__PostDetai__UserI__3F466844">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="PostDetails" EntitySet="PostDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profile__UserId__21B6055D" Association="Self.FK__Profile__UserId__21B6055D">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Profile" EntitySet="Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__QuestionS__Paper__75A278F5" Association="Self.FK__QuestionS__Paper__75A278F5">
+      <End Role="PaperCategory" EntitySet="PaperCategory" />
+      <End Role="QuestionSet" EntitySet="QuestionSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Questions__Paper__7F2BE32F" Association="Self.FK__Questions__Paper__7F2BE32F">
+      <End Role="PaperCategory" EntitySet="PaperCategory" />
+      <End Role="Questions" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Questions__Quest__797309D9" Association="Self.FK__Questions__Quest__797309D9">
+      <End Role="QuestionsType" EntitySet="QuestionsType" />
+      <End Role="Questions" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Questions__Quest__7B5B524B" Association="Self.FK__Questions__Quest__7B5B524B">
+      <End Role="QuestionSet" EntitySet="QuestionSet" />
+      <End Role="Questions" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Questions__Quest__7D439ABD" Association="Self.FK__Questions__Quest__7D439ABD">
+      <End Role="QuestionsLevel" EntitySet="QuestionsLevel" />
+      <End Role="Questions" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Rating__PageId__60A75C0F" Association="Self.FK__Rating__PageId__60A75C0F">
+      <End Role="PostDetails" EntitySet="PostDetails" />
+      <End Role="Rating" EntitySet="Rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Rating__UserId__5EBF139D" Association="Self.FK__Rating__UserId__5EBF139D">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Rating" EntitySet="Rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Results__Questio__0E6E26BF" Association="Self.FK__Results__Questio__0E6E26BF">
+      <End Role="QuestionSet" EntitySet="QuestionSet" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Results__Questio__10566F31" Association="Self.FK__Results__Questio__10566F31">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Results__UserId__0C85DE4D" Association="Self.FK__Results__UserId__0C85DE4D">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserDetai__RoleI__1367E606" Association="Self.FK__UserDetai__RoleI__1367E606">
+      <End Role="RoleUser" EntitySet="RoleUser" />
+      <End Role="UserDetails" EntitySet="UserDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,26 @@
+﻿
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" ng-controller="MainController">
+<head>
+    <meta charset='UTF-8'>
+    <title ng-bind-template="{{pageTitle}} | Demo">Loading...</title>
+</head>
+@Scripts.Render("~/bundles/angularjs")
+@Scripts.Render("~/scripts/configjs")
+@Scripts.Render("~/bundles/modulejs")
+<body class="home page-template-default page page-id-6 logged-in siteorigin-panels siteorigin-panels-before-js siteorigin-panels-home blog-post">
+    <div class="wrapper ">
+        <header class="header ">
+            <ul>
+                <li><a href="javascript:void(0)" ui-sref="home">Home</a></li>
+                <li><a href="javascript:void(0)" ui-sref="contact">Contact</a></li>
+                <li><a href="javascript:void(0)" ui-sref="about">About</a></li>
+            </ul>
+        </header>
+        <div class="main  main-raised ">
+            <h1>Display Page</h1>
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ShutterPrism.MVC.FontAwsome</id>
+    <version>1.0.1</version>
+    <title>MVC Font Awesome</title>
+    <authors>Shutter Prism</authors>
+    <owners>Shutter Prism</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>http://www.shutterprism.com/Software/FontAwesome</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Font Awesome MVC is a HTML extension that wraps the popular Font Awesome project into friendly Razor syntax.
+
+To start using the extension methods you'll need to include the namespace 'ShutterPrism.MVC.FontAwesome' in your web.config file. Then you will have access to the to create Font Awesome icons using the helper methods.
+
+@Html.FontAwesome().Icon(FontAwesome.FontAwesomeIcons.CameraRetro)</description>
+    <copyright>Copyright © Shutter Prism</copyright>
+    <language>en-US</language>
+    <tags>mvc font awesome</tags>
+    <dependencies>
+      <dependency id="font-awesome" version="4.3.0" />
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,52 @@
+/* Enter Your Custom CSS Here */
+ul.light li.tweets_avatar {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #fff !important;
+    padding: 0 !important;
+    position: relative;
+}
+
+ul.light li.tweets_avatar:nth-child(3) {
+	display: none;
+}
+
+ul.light li.tweets_avatar .tweet_data {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    color: #999999 !important;
+    font-weight: 300 !important;
+    font-size: 14px !important;
+    line-height: 21px !important;
+    padding-left: 19px;
+}
+
+ul.light li.tweets_avatar .tweet_data:before {
+	content: "\f099";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  	color: #fff;
+  	font-size: 16px;
+  	position: absolute;
+  	left: 0;
+  	top: 5px;
+}
+
+
+.fetched_tweets.light .tweets_avatar .tweet_data a {
+color: #999999 !important;
+    padding: 0 !important;
+}
+
+.fetched_tweets div.times {
+    float: left;
+    display: none !important;
+}
+
+.contactus .info p {
+color: #fefefe;
+}
